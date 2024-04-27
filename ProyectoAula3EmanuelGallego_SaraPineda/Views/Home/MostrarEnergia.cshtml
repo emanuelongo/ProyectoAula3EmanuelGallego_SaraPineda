@@ -1,0 +1,42 @@
+﻿@model ProyectoAula3EmanuelGallego_SaraPineda.Models.Epm
+
+@{
+    ViewBag.Title = "Energia";
+}
+
+<html>
+<head>
+    <title>Energia</title>
+</head>
+<body>
+    <div>
+        <h3>Estadísticas de energía</h3>
+        @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+        {
+            <div class="alert alert-danger">@ViewBag.Notificacion</div>
+        }
+        <form action="Energia" method="post">
+
+            <table>
+                @{
+                    double promedioConsumoEnergia = Model.CacularPromedioConsumoDeEnergia();
+                    double totalDescuentosPorIncentivosDeEnergia = Model.CalcularTotalDescuentosPorIncentivoDeEnergia();
+                    string clienteConMayorDesfaseEnergia = Model.MostrarDatosClienteConMayorDesfaseEnergia();
+                    int estratoConMayorConsumoEnergia = Model.MostrarEstratoConMayorConsumoEnergia();
+                    int estratoConMenorConsumoEnergia = Model.MostrarEstratoConMenorConsumoEnergia();
+                }
+                <tr>
+                    <td>
+                        <label>Estadísticas para la energía</label>
+                        <div class="text-muted"> Promedio consumo de energía: @promedioConsumoEnergia</div>
+                        <div class="text-muted"> Total de descuentos por incentivos: @totalDescuentosPorIncentivosDeEnergia</div>
+                        <div class="text-muted"> Cédula del cliente con mayor desfase de energía: @clienteConMayorDesfaseEnergia</div>
+                        <div class="text-muted"> Estrato con mayor consumo energía: @estratoConMayorConsumoEnergia</div>
+                        <div class="text-muted"> Estrato con menor consumo de energía: @estratoConMenorConsumoEnergia</div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

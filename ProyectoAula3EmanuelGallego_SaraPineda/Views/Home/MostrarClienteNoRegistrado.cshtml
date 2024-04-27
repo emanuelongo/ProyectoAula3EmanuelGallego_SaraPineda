@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Cliente no registrado";
+}
+
+<html>
+<body>
+    <div>
+        <h3>Cliente no registrado</h3>
+        @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+        {
+            <div class="alert alert-danger">@ViewBag.Notificacion</div>
+        }
+    </div>
+</body>
+</html>

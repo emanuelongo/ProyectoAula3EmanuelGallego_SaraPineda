@@ -1,0 +1,43 @@
+﻿@model ProyectoAula3EmanuelGallego_SaraPineda.Models.Usuario
+@{
+    ViewBag.Title = "Cliente elimiando";
+}
+
+<html>
+<body>
+    <div>
+        <h3>Cliente eliminado con éxito</h3>
+        <form action="Home/MostrarClienteEliminado" method="post">
+            <table>
+                <tr>
+                    <td><label>Cédula: @Model.Cedula </label></td>
+                </tr>
+                <tr>
+                    <td><label>Nombre: @Model.Nombre</label></td>
+                </tr>
+                <tr>
+                    <td><label>Apellidos: @Model.Apellido</label></td>
+                </tr>
+                <tr>
+                    <td><label>Periodo consumo: @Model.PeriodoConsumo</label></td>
+                </tr>
+                <tr>
+                    <td><label>Estrato: @Model.Estrato</label></td>
+                </tr>
+                <tr>
+                    <td><label>Meta ahorro energía: @Model.MetaAhorroEnergia1</label></td>
+                </tr>
+                <tr>
+                    <td><label>Consumo actual energía: @Model.ConsumoEnergia1</label></td>
+                </tr>
+                <tr>
+                    <td><label>Promedio consumo agua: @Model.PromedioConsumoAgua1</label></td>
+                </tr>
+                <tr>
+                    <td><label>Consumo actual agua: @Model.ConsumoAgua1</label></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

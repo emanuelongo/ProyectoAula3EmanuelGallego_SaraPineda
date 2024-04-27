@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Modificacion";
+}
+
+<html>
+<body>
+    <div>
+        <h3>Modificar información del cliente</h3>
+        @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+        {
+            <div class="alert alert-danger">@ViewBag.Notificacion</div>
+        }
+        @using (Html.BeginForm("MostrarModificacion", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td><label> * Cédula:  </label></td>
+                    <td><input type="text" name="cedula" pattern="[0-9]+" required oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Opción a modificar:  </label></td>
+                    <td>
+                        <select name="opcionModificar" style="width: 300px;">
+                            <option value="1">Nombre</option>
+                            <option value="2">Apellido</option>
+                            <option value="3">Periodo consumo</option>
+                            <option value="4">Estrato</option>
+                            <option value="5">Meta ahorro energía</option>
+                            <option value="6">Consumo energía</option>
+                            <option value="7">Promedio consumo agua</option>
+                            <option value="8">Consumo actual agua</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Nuevo valor:  </label></td>
+                    <td><input type="text" name="valorNuevo" pattern="[a-zA-Z.,:;()¿?¡! ñ]+" required /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+            </table>
+            <tr>
+                <td><input type="submit" name="enviar" value="Modificar" /></td>
+            </tr>
+        }
+    </div>
+</body>
+</html>

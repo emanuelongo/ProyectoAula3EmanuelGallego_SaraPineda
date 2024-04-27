@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoAula3EmanuelGallego_SaraPineda
+namespace ProyectoAula3EmanuelGallego_SaraPineda.Models
 {
     public class Usuario
     {

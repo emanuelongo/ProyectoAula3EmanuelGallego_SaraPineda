@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Facturacion";
+}
+
+<html>
+<body>
+    <div>
+        <h3>Facturas de clientes</h3>
+        @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+        {
+            <div class="alert alert-danger">@ViewBag.Notificacion</div>
+        }
+        @using (Html.BeginForm("MostrarFactura", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td><label> Cédula:  </label></td>
+                    <td><input type="text" name="cedula" pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+            </table>
+            <tr>
+                <td><input type="submit" name="enviar" value="Facturar" /></td>
+            </tr>
+        }
+    </div>
+</body>
+</html>

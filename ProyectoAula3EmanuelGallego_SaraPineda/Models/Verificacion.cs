@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoAula3EmanuelGallego_SaraPineda.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,10 @@ namespace ProyectoAula3EmanuelGallego_SaraPineda
 {
     public class Verificacion
     {
-        private Epm epm;
-
-        public Epm Epm { get => epm; set => epm = value; }
-
-        public Verificacion()
+        List<Usuario> DatosDeUsuarios = Epm.datosDeUsuarios;
+        public bool verificarExistenciaId(string id)
         {
-            this.Epm = new Epm();
-        }
-
-        public bool verificarExistenciaId(String id)
-        {
-            foreach (Usuario usuario in Epm.DatosDeUsuarios)
+            foreach (Usuario usuario in DatosDeUsuarios)
             {
                 if (usuario.Cedula == id)
                 {

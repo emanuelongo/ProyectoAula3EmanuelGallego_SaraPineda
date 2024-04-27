@@ -1,0 +1,37 @@
+﻿@model ProyectoAula3EmanuelGallego_SaraPineda.Models.Factura
+
+@{
+    ViewBag.Title = "Factura";
+}
+
+<html>
+<head>
+    <title>Facturación</title>
+</head>
+<body>
+    <div>
+        <h3>Facturación</h3>
+        <form action="Facturacion" method="post">
+            <table>
+                @{
+                    double totalPagarAgua = Model.CalcularValorAPagarAgua();
+                    double totalPagarEnergia = Model.CalcularValorAPagarEnergia();
+                    double totalPagarFacturaCliente = Model.CalcularValorTotalAPagar();
+                    double totalPagarClientes = Model.CalcularTotalPagadoEmpresaPorConsumoTotal();
+                }
+                <tr>
+                    <td>
+                        <label>1. Facturas emitidas por servicios por cliente:</label>
+                        <div class="text-muted"> Valor total pagado por los servicios: @totalPagarFacturaCliente</div>
+                        <div class="text-muted"> Valor total pagado agua: @totalPagarAgua</div>
+                        <div class="text-muted"> Valor total pagado energía: @totalPagarEnergia</div>
+
+                        <label>2. Total pagado por todos los clientes:</label>
+                        <div class="text-muted"> Valor pagado por todos los clientes: @totalPagarClientes</div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

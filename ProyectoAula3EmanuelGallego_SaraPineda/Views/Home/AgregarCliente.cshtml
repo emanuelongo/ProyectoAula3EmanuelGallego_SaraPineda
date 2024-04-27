@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Agregar Cliente";
+}
+
+<html>
+<body>
+    <div>
+        <h3>Datos Personales del Cliente</h3>
+        @if (!string.IsNullOrEmpty(ViewBag.Notificacion)) 
+        {
+            <div class="alert alert-danger">@ViewBag.Notificacion</div>
+        }
+        @using (Html.BeginForm("MostrarRegistro", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Cédula:  </label></td>
+                    <td><input type="text" name="cedula" pattern="[0-9]+" required oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Nombre:  </label></td>
+                    <td><input type="text" name="nombre" pattern="[a-zA-Z.,:;()¿?¡! ñ]+" required /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Apellidos:  </label></td>
+                    <td><input type="text" name="apellidos" pattern="[a-zA-Z.,:;()¿?¡! ñ]+" required /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Periodo de consumo:  </label></td>
+                    <td>
+                        <select name="periodoConsumo" style="width: 300px;">
+                            <option value="1">Mes 1</option>
+                            <option value="2">Mes 2</option>
+                            <option value="3">Mes 3</option>
+                            <option value="4">Mes 4</option>
+                            <option value="5">Mes 5</option>
+                            <option value="6">Mes 6</option>
+                            <option value="7">Mes 7</option>
+                            <option value="8">Mes 8</option>
+                            <option value="9">Mes 9</option>
+                            <option value="10">Mes 10</option>
+                            <option value="11">Mes 11</option>
+                            <option value="12">Mes 12</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Estrato:  </label></td>
+                    <td><input type="text" name="estrato" pattern="[1-6]+" required oninput="this.value=this.value.replace(/[^1-6]/g,'');" value="" maxlength="1" /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Meta ahorro energía:  </label></td>
+                    <td><input type="text" name="metaAhorroEnergia" pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label> * Consumo actual energía:  </label></td>
+                    <td><input type="text" name="consumoActualEnergia" pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label>* Promedio consumo agua:</label></td>
+                    <td><input type="text" name="promedioConsumoAgua" pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label>* Consumo actual agua:</label></td>
+                    <td><input type="text" name="ConsumoActualAgua" pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td></td>
+                </tr>
+            </table>
+            <tr>
+                <td><input type="submit" name="enviar" value="Agregar" /></td>
+            </tr>
+        }
+    </div>
+</body>
+</html>

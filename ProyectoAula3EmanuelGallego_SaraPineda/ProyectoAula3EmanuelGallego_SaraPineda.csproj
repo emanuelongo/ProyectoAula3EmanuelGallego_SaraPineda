@@ -182,6 +182,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Facturacion.cshtml" />
+    <Content Include="Views\Home\Epm.cshtml" />
+    <Content Include="Views\Home\Cliente.cshtml" />
+    <Content Include="Views\Home\MostrarEnergia.cshtml" />
+    <Content Include="Views\Home\MostrarAgua.cshtml" />
+    <Content Include="Views\Home\Modificacion.cshtml" />
+    <Content Include="Views\Home\EliminarCliente.cshtml" />
+    <Content Include="Views\Home\AgregarCliente.cshtml" />
+    <Content Include="Views\Home\MostrarRegistro.cshtml" />
+    <Content Include="Views\Home\MostrarModificacion.cshtml" />
+    <Content Include="Views\Home\MostrarClienteEliminado.cshtml" />
+    <Content Include="Views\Home\MostrarFactura.cshtml" />
+    <Content Include="Views\Home\MostrarClienteNoRegistrado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

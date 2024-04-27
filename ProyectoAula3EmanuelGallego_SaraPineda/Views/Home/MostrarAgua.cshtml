@@ -1,0 +1,40 @@
+﻿@model ProyectoAula3EmanuelGallego_SaraPineda.Models.Epm
+
+@{
+    ViewBag.Title = "Agua";
+}
+
+<html>
+<head>
+    <title>Agua</title>
+</head>
+<body>
+    <div>
+        <h3>Estadísticas de agua</h3>
+        <form action="Agua" method="post">
+            @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+            {
+                <div class="alert alert-danger">@ViewBag.Notificacion</div>
+            }
+                <table>
+                    @{
+                        double totalM3AguaEncimaPromedio = Model.CalcularTotalM3AguaEncimaPromedio();
+                        string porcentajeConsumoAguaPorEstrato = Model.ConusltarPorcentajeConsumoAguaPorEstrato();
+                        double clientesConConsumoAguaMayorAlPromedio = Model.CalcularClientesConConsumoAguaMayorAlPromedio();
+                        double estratoConMayorAhorroAgua = Model.MostrarEstratoConMayorAhorroAgua();
+                        string clienteConMayorConsumoAgua = Model.CalcularClienteMayorConsumoAgua();}
+                    <tr>
+                        <td>
+                            <label>Estadísticas para el agua</label>
+                            <div class="text-muted"> Cantidad de m3 encima del promedio: @totalM3AguaEncimaPromedio</div>
+                            <div class="text-muted"> Porcentaje de consumo de agua para el estrato: @porcentajeConsumoAguaPorEstrato</div>
+                            <div class="text-muted"> Cantidad de clientes con consumo mayor al promedio: @clientesConConsumoAguaMayorAlPromedio</div>
+                            <div class="text-muted"> Estrato con mayor ahorro agua: @estratoConMayorAhorroAgua</div>
+                            <div class="text-muted"> Clientes con mayor consumo agua por periodo de consumo: @clienteConMayorConsumoAgua</div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+    </div>
+</body>
+</html>

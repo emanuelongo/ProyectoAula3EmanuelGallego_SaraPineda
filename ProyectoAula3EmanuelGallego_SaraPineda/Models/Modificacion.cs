@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoAula3EmanuelGallego_SaraPineda.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,53 +9,118 @@ namespace ProyectoAula3EmanuelGallego_SaraPineda
 {
     public class Modificacion
     {
-        private Epm epm;
+        List<Usuario> DatosDeUsuarios = Epm.datosDeUsuarios;
 
-        public Epm Epm { get => epm; set => epm = value; }
-
-        public Modificacion()
+        public Usuario modificarNombre(string cedula, string nuevoNombre)
         {
-            this.Epm = new Epm();
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.Nombre = nuevoNombre;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarNombre(Usuario usuario, string nuevoNombre)
+        public Usuario modificarApellido(string cedula, string nuevoApellido)
         {
-            usuario.Nombre = nuevoNombre;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.Apellido = nuevoApellido;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarApellido(Usuario usuario, string nuevoApellido)
+        public Usuario modificarPeriodoConsumo(string cedula, int nuevoPeriodoConsumo)
         {
-            usuario.Apellido = nuevoApellido;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.PeriodoConsumo = nuevoPeriodoConsumo;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarPeriodoConsumo(Usuario usuario, int nuevoPeriodoConsumo)
+        public Usuario modificarEstrato(string cedula, int nuevoEstrato)
         {
-            usuario.PeriodoConsumo = nuevoPeriodoConsumo;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.Estrato = nuevoEstrato;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarEstrato(Usuario usuario, int nuevoEstrato)
+        public Usuario modificarMetaAhorroEnergia(string cedula, int nuevaMetaAhorroEnergia)
         {
-            usuario.Estrato = nuevoEstrato;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.MetaAhorroEnergia1 = nuevaMetaAhorroEnergia;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarMetaAhorroEnergia(Usuario usuario, int nuevaMetaAhorroEnergia)
+        public Usuario modificarConsumoEnergia(string cedula, int nuevoConsumoEnergia)
         {
-            usuario.MetaAhorroEnergia1 = nuevaMetaAhorroEnergia;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.ConsumoEnergia1 = nuevoConsumoEnergia;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarConsumoEnergia(Usuario usuario, int nuevoConsumoEnergia)
+        public Usuario modificarPromedioConsumoAgua(string cedula, int nuevoPromedioConsumoAgua)
         {
-            usuario.ConsumoEnergia1 = nuevoConsumoEnergia;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.PromedioConsumoAgua1 = nuevoPromedioConsumoAgua;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
 
-        public void modificarPromedioConsumoAgua(Usuario usuario, int nuevoPromedioConsumoAgua)
+        public Usuario modificarConsumoAgua(string cedula, int nuevoConsumoAgua)
         {
-            usuario.PromedioConsumoAgua1 = nuevoPromedioConsumoAgua;
-        }
-
-        public void modificarConsumoAgua(Usuario usuario, int nuevoConsumoAgua)
-        {
-            usuario.ConsumoAgua1 = nuevoConsumoAgua;
+            Usuario usuarioMencionado = null;
+            foreach (Usuario usuario in DatosDeUsuarios)
+            {
+                if (usuario.Cedula == cedula)
+                {
+                    usuario.ConsumoAgua1 = nuevoConsumoAgua;
+                    usuarioMencionado = usuario;
+                }
+            }
+            return usuarioMencionado;
         }
     }
 }
